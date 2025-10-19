@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisha - B.Tech Student Portfolio</title>
+    <meta name="description" content="Portfolio of Nisha, a passionate B.Tech student and aspiring developer showcasing projects and skills with GitHub and LinkedIn integrations.">
+    <meta name="keywords" content="portfolio, developer, student, projects, web development, B.Tech, GitHub, LinkedIn">
+    <meta name="author" content="Nisha">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com/">
+    <meta property="og:title" content="Nisha - B.Tech Student Portfolio">
+    <meta property="og:description" content="Portfolio of Nisha, a passionate B.Tech student and aspiring developer showcasing projects and skills.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Nisha+Portfolio">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-portfolio-url.com/">
+    <meta property="twitter:title" content="Nisha - B.Tech Student Portfolio">
+    <meta property="twitter:description" content="Portfolio of Nisha, a passionate B.Tech student and aspiring developer showcasing projects and skills.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Nisha+Portfolio">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Nisha Portfolio">
+    <link rel="apple-touch-icon" href="https://via.placeholder.com/180x180/667eea/ffffff?text=N">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://via.placeholder.com/32x32/667eea/ffffff?text=N">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://via.placeholder.com/32x32/667eea/ffffff?text=N">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://via.placeholder.com/16x16/667eea/ffffff?text=N">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles-web3.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles-web3.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    
+    <!-- Crypto Ticker -->
+    <div class="crypto-ticker">
+        <div>ETH: $2,450.32 <span style="color: var(--accent-neon);">+2.4%</span></div>
+        <div>BTC: $43,210.89 <span style="color: var(--accent-neon);">+1.8%</span></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Nisha</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title holographic">
+                        Hi I'm Nisha
+                    </h1>
+                    <h2 class="hero-subtitle">Web3 Developer & Blockchain Enthusiast</h2>
+                    <p class="hero-description">
+                        Building the future of decentralized applications. Passionate about blockchain technology, 
+                        smart contracts, and creating innovative DeFi solutions that revolutionize digital experiences.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" id="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <div class="profile-placeholder" id="profile-img">
+                                <div class="profile-initials">NP</div>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profile-name">Nisha Patwal</h3>
+                            <p id="profile-title">Web3 Developer & Blockchain Expert</p>
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <span class="stat-number" id="github-repos">0</span>
+                                    <span class="stat-label">Repositories</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" id="linkedin-connections">0</span>
+                                    <span class="stat-label">Connections</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate Web3 developer specializing in blockchain technology and decentralized applications. 
+                        My journey began with traditional web development and evolved into the exciting world of cryptocurrency and DeFi.
+                    </p>
+                    <p>
+                        I create smart contracts, build DApps, and explore the limitless possibilities of blockchain technology. 
+                        From Ethereum to Polygon, I'm always pushing the boundaries of what's possible in the decentralized web.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fab fa-ethereum"></i>
+                            <h4>Blockchain</h4>
+                            <p>Smart contract development & DeFi protocols</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cube"></i>
+                            <h4>Web3 Development</h4>
+                            <p>Decentralized applications & NFT platforms</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Innovation</h4>
+                            <p>Building the future of digital finance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="blockchain-network">Ethereum</span>
+                <span class="blockchain-network">Polygon</span>
+                <span class="blockchain-network">BSC</span>
+                <span class="blockchain-network">Arbitrum</span>
+                <span class="blockchain-network">Optimism</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Vue.js</span>
+                        <span class="skill-item">Angular</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Sass/SCSS</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Express</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">REST APIs</span>
+                        <span class="skill-item">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Postman</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">Netlify</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">PHP</span>
+                        <span class="skill-item">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Latest Projects</h2>
+            <p class="section-subtitle">Fetched directly from GitHub</p>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be loaded dynamically from GitHub API -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading projects from GitHub...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LinkedIn Section -->
+    <section id="linkedin-info" class="linkedin-section">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="linkedin-card" id="linkedin-card">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading LinkedIn profile...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and build something amazing together!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nisha.patwal2006@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 12345 67890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Delhi, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/nisha-patwal-286842333</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>github.com/nishapatwal</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nisha. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="web3-animations.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

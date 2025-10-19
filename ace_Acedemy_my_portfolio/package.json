@@ -1,0 +1,53 @@
+{
+  "name": "nisha-portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio website for Nisha, a B.Tech student, with GitHub and LinkedIn API integrations",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to your preferred hosting platform'",
+    "lint": "npx eslint script.js",
+    "format": "npx prettier --write *.html *.css *.js *.md"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "student",
+    "developer",
+    "github-api",
+    "linkedin",
+    "responsive",
+    "modern"
+  ],
+  "author": {
+    "name": "Nisha",
+    "email": "nisha@example.com",
+    "url": "https://github.com/NISHAPATWAL"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NISHAPATWAL/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NISHAPATWAL/portfolio/issues"
+  },
+  "homepage": "https://NISHAPATWAL.github.io/portfolio",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "http-server": "^14.0.0",
+    "live-server": "^1.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
